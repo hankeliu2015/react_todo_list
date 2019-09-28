@@ -5,6 +5,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './components/nav';
 import TodoList from './containers/todoList'
+import TodoNew from './containers/todonew'
 
 class App extends Component {
 
@@ -39,7 +40,7 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} />} />
-            <Route exact path='/new'></Route>
+            <Route exact path='/new' render={(props) => <TodoNew/>}/>
           </Switch>
         </Router>
 
