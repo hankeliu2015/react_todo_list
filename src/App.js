@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Nav from './components/nav';
 import TodoList from './containers/todoList'
 
 class App extends Component {
@@ -26,8 +28,15 @@ class App extends Component {
         </header>
 
         <br></br>
-        <TodoList />
 
+
+        <Router>
+          <Nav />
+          <Switch>
+            <Route exact path='/' component={TodoList}></Route>
+            <Route exact path='/new'></Route>
+          </Switch>
+        </Router>
 
 
       </div>
