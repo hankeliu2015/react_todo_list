@@ -8,6 +8,14 @@ import TodoList from './containers/todoList'
 
 class App extends Component {
 
+  state = {
+    todos: [
+      {content: "Finish Building App", completed: true},
+      {content: "Having Breakfast", completed: false},
+      {content: "Do Laundry", completed: false}
+    ]
+  }
+
   render () {
 
     return (
@@ -27,13 +35,10 @@ class App extends Component {
           </a>
         </header>
 
-        <br></br>
-
-
         <Router>
           <Nav />
           <Switch>
-            <Route exact path='/' component={TodoList}></Route>
+            <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} />} />
             <Route exact path='/new'></Route>
           </Switch>
         </Router>
