@@ -17,6 +17,10 @@ class App extends Component {
     ]
   }
 
+  createTodo = (newTaskObj) => {
+    this.setState({todos: [...this.state.todos, newTaskObj]})
+  }
+
   render () {
 
     return (
@@ -40,7 +44,7 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} />} />
-            <Route exact path='/new' render={(props) => <TodoNew/>}/>
+            <Route exact path='/new' render={(props) => <TodoNew createTodo={this.createTodo}/>}/>
           </Switch>
         </Router>
 
