@@ -44,7 +44,7 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} />} />
-            <Route exact path='/new' render={(props) => <TodoNew createTodo={this.createTodo}/>}/>
+            <Route exact path='/new' render={(props) => <TodoNew {...props} createTodo={this.createTodo}/>}/>
           </Switch>
         </Router>
 

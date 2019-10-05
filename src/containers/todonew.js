@@ -16,7 +16,7 @@ class TodoNew extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createTodo(this.state);
-    // this.props.history.push('/');
+    this.props.history.push('/');
   }
   render() {
     console.log(this.state)
