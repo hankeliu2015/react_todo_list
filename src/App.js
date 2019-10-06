@@ -24,11 +24,11 @@ class App extends Component {
 
   deleteTodo = (deleteObj) => {
     let i = this.state.todos.indexOf(deleteObj)
+    let stateTodos = this.state.todos
+    stateTodos.splice(i,1);
     this.setState({
-      todos: this.state.todos.splice(i,1)
+      todos: stateTodos
     })
-
-    debugger
   }
 
   render () {
