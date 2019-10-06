@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-const ToDo = (props) => {
+class ToDo extends Component {
+  handleClick = () => {
+
+  }
+
+render() {
+
   return (
     <li>
-      content: <Link to={`/todos/${props.index}`}>{props.content}</Link>; completed: {props.completed ? 'yes' : 'no'};<a href='#'>Delete</a>
+      content: <Link to={`/todos/${this.props.index}`}>{this.props.content}</Link>; completed: {this.props.completed ? 'yes' : 'no'};<a href='#' onClick={this.handleClick}>Delete</a>
     </li>
-  )
+    )
+  }
+
 }
 
 export default ToDo;

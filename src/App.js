@@ -51,7 +51,7 @@ class App extends Component {
         <Router>
           <Nav />
           <Switch>
-            <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} />} />
+            <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} deleteTodo={this.deleteTodo}/>} />
             <Route exact path='/new' render={(props) => <TodoNew {...props} createTodo={this.createTodo}/>}/>
             <Route exact path = '/todos/:id' render={(props) => <TodoShow {...props} todos = {this.state.todos}/>} />
 
