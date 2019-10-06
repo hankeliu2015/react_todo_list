@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 class ToDo extends Component {
-  handleClick = () => {
-
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.deleteTodo(this.props.todoObj);
   }
 
 render() {
