@@ -18,24 +18,24 @@ nav {
   padding: 10px;
 }
 
-nav:after {
-  content: "";
+nav::after {
+  content: "";      /* remove any content after nav*/
   clear: both;
   display: table;
 }
 
 nav ul {
   margin: 0;
-  float: right;
+  float: center;
 }
 
 nav li {
   display: inline-block;
-  padding: 5px;
+  padding: 10px;
 }
 
 nav a {
-  color: black;
+  color: green;
   text-decoration: none;
 }
 
@@ -43,6 +43,7 @@ nav a:hover {
   color: grey;
 }
 
-h1 {
+h3 {
+  color: grey;
   text-align: center;
 }
