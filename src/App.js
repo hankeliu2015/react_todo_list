@@ -27,6 +27,8 @@ class App extends Component {
     this.setState({
       todos: this.state.todos.splice(i,1)
     })
+
+    debugger
   }
 
   render () {

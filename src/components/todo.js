@@ -11,7 +11,7 @@ render() {
 
   return (
     <li>
-      content: <Link to={`/todos/${this.props.index}`}>{this.props.content}</Link>; completed: {this.props.completed ? 'yes' : 'no'};<a href='#' onClick={this.handleClick}>Delete</a>
+      content: <Link to={`/todos/${this.props.index}`}>{this.props.content}</Link>; completed: {this.props.completed ? 'yes' : 'no'};<button onClick={this.handleClick}>Delete</button>
     </li>
     )
   }
