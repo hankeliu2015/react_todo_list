@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './components/nav';
 import TodoList from './containers/todoList'
 import TodoNew from './containers/todonew'
+import TodoShow from './containers/todoshow'
 
 class App extends Component {
 
