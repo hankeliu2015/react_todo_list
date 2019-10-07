@@ -14,9 +14,10 @@ class searchTodo extends Component {
     e.preventDefault();
     const lowChar = this.state.search.toLowerCase();
     const filteredTodos = this.props.todos.filter(todo => {
+      // debugger
       return todo.content.toLowerCase().includes(lowChar)
     })
-
+    this.props.filterTodos(filteredTodos);
     // this.props.createTodo(this.state);
     // this.props.history.push('/');
   }
@@ -43,7 +44,7 @@ class searchTodo extends Component {
         </form>
 
         <h3>Search Results:</h3>
-          <p>{this.state.search}</p>
+          <p>{this.props.filtered[0] ? this.props.filtered[0].content : "no results"}</p>
       </div>
     )
   }

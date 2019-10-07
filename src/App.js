@@ -17,7 +17,7 @@ class App extends Component {
       {content: "Having Breakfast", completed: false},
       {content: "Do Laundry", completed: false}
     ],
-    filteredTodos: []
+    filtered: []
   }
 
   createTodo = (newTaskObj) => {
@@ -44,6 +44,14 @@ class App extends Component {
     })
   }
 
+  filterTodos = (arrayObj) => {
+    // debugger
+    this.setState ({
+      filtered: arrayObj
+    })
+  }
+
+
   render () {
 
     return (
@@ -69,7 +77,7 @@ class App extends Component {
             <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo}/>} />
             <Route exact path='/new' render={(props) => <TodoNew {...props} createTodo={this.createTodo}/>}/>
             <Route exact path = '/todos/:id' render={(props) => <TodoShow {...props} todos = {this.state.todos}/>} />
-            <Route exact path = '/search' render={(props) => <SearchTodo {...props} todos = {this.state.todos}/>} />
+            <Route exact path = '/search' render={(props) => <SearchTodo {...props} todos = {this.state.todos} filterTodos={this.filterTodos} filtered={this.state.filtered}/>} />
 
 
           </Switch>
