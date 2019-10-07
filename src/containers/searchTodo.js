@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ToDo from '../components/todo'
 
 class searchTodo extends Component {
 
@@ -23,6 +24,8 @@ class searchTodo extends Component {
   }
   render() {
 
+  let filteredList = this.props.filtered.map((todo, index) => <ToDo key={index+1} content={todo.content} completed={todo.completed} index={index} deleteTodo={this.props.deleteTodo} editTodo={this.props.editTodo} todoObj={todo}/>)
+
     return (
       <div>
         <h3>Search a Task </h3>
@@ -30,11 +33,6 @@ class searchTodo extends Component {
         <form onSubmit={this.handleSubmit}>
 
           <label>Search Key Words :</label><input type = "text" name='search' value={this.state.search} onChange={this.handleChange}/><br/>
-
-        {/*
-          <label>Content1:</label><input type = "text" name='content1' value={this.state.content1} onChange={this.handleChange}/><br/>
-          <label>Content2:</label><input type = "text" name='content2' value={this.state.content2} onChange={this.handleChange}/><br/>
-          */}
 
           <label>Completed?</label>
           <input type='checkbox' name='completed' value={this.state.completed} onChange={this.handleChange} /><br/>
@@ -44,7 +42,11 @@ class searchTodo extends Component {
         </form>
 
         <h3>Search Results:</h3>
-          <p>{this.props.filtered[0] ? this.props.filtered[0].content : "no results"}</p>
+          {filteredList}
+
+          {/*
+            <p>{this.props.filtered[0] ? this.props.filtered[0].content : "no results"}</p>
+            */}
       </div>
     )
   }
