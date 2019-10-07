@@ -24,7 +24,7 @@ class searchTodo extends Component {
   }
   render() {
 
-  let filteredList = this.props.filtered.map((todo, index) => <ToDo key={index+1} content={todo.content} completed={todo.completed} index={index} deleteTodo={this.props.deleteTodo} editTodo={this.props.editTodo} todoObj={todo}/>)
+  let results = this.props.searchResults.map((todo, index) => <ToDo key={index+1} content={todo.content} completed={todo.completed} index={index} deleteTodo={this.props.deleteTodo} editTodo={this.props.editTodo} todoObj={todo}/>)
 
     return (
       <div>
@@ -42,7 +42,7 @@ class searchTodo extends Component {
         </form>
 
         <h3>Search Results:</h3>
-          {filteredList}
+          {results}
 
           {/*
             <p>{this.props.filtered[0] ? this.props.filtered[0].content : "no results"}</p>
