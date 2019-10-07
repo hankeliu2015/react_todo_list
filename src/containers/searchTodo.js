@@ -4,7 +4,8 @@ import ToDo from '../components/todo'
 class searchTodo extends Component {
 
   state = {
-    search: ''
+    search: '',
+    completed: false
   }
 
   handleChange = (e) => {
@@ -13,12 +14,24 @@ class searchTodo extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const lowChar = this.state.search.toLowerCase();
-    const filteredTodos = this.props.todos.filter(todo => {
-      return todo.content.toLowerCase().includes(lowChar)
-    })
-    this.props.filterTodos(filteredTodos);
+    if (this.state.search) {
+      const lowChar = this.state.search.toLowerCase();
+      const filteredTodos = this.props.todos.filter(todo => {
+        return todo.content.toLowerCase().includes(lowChar)
+      })
+      this.props.filterTodos(filteredTodos);
+    }
+
+    if (this.state.completed) {
+      const filteredTodos = this.props.todos.filter(todo => {
+        return todo.completed
+      })
+      this.props.filterTodos(filteredTodos);
+    }
+
   }
+
+
   render() {
 
   let results = this.props.searchResults.map((todo, index) => <ToDo key={index+1} content={todo.content} completed={todo.completed} index={index} deleteTodo={this.props.deleteTodo} editTodo={this.props.editTodo} todoObj={todo}/>)

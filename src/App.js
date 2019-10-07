@@ -13,9 +13,12 @@ class App extends Component {
 
   state = {
     todos: [
+      {content: "Having Breakfast", completed: true},
       {content: "Finish Building App", completed: true},
-      {content: "Having Breakfast", completed: false},
-      {content: "Do Laundry", completed: false}
+      {content: "Group Meeting", completed: true},
+      {content: "Lunch Break", completed: false},
+      {content: "Team Meeting", completed: false},
+      {content: "Pickup Laundry", completed: false}
     ],
     searchResults: []
   }
