@@ -14,21 +14,24 @@ class searchTodo extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.search) {
+    if (this.state.search && this.state.completed) {
+      const lowChar = this.state.search.toLowerCase();
+      const filteredTodos = this.props.todos.filter(todo => {
+        return todo.content.toLowerCase().includes(lowChar) && this.state.completed
+      })
+      this.props.filterTodos(filteredTodos);
+    } else if (this.state.search) {
       const lowChar = this.state.search.toLowerCase();
       const filteredTodos = this.props.todos.filter(todo => {
         return todo.content.toLowerCase().includes(lowChar)
       })
       this.props.filterTodos(filteredTodos);
-    }
-
-    if (this.state.completed) {
+    } else if (this.state.completed) {
       const filteredTodos = this.props.todos.filter(todo => {
         return todo.completed
       })
       this.props.filterTodos(filteredTodos);
     }
-
   }
 
 
