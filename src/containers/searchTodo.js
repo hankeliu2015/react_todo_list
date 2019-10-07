@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class searchTodo extends Component {
 
   state = {
-
+    search: ''
   }
 
   handleChange = (e) => {
@@ -22,7 +22,8 @@ class searchTodo extends Component {
         <h3>Search a Task </h3>
 
         <form onSubmit={this.handleSubmit}>
-          <label>Content :</label><input type = "text" name='content' value={this.state.content} onChange={this.handleChange}/><br/>
+
+          <label>Search Key Words :</label><input type = "text" name='search' value={this.state.search} onChange={this.handleChange}/><br/>
 
         {/*
           <label>Content1:</label><input type = "text" name='content1' value={this.state.content1} onChange={this.handleChange}/><br/>
@@ -35,6 +36,9 @@ class searchTodo extends Component {
           <input type='submit' value='Search' />
 
         </form>
+
+        <h3>Search Results:</h3>
+          <p>{this.state.search}</p>
       </div>
     )
   }
