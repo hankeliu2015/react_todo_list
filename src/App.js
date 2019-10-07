@@ -7,6 +7,7 @@ import Nav from './components/nav';
 import TodoList from './containers/todoList'
 import TodoNew from './containers/todonew'
 import TodoShow from './containers/todoshow'
+import SearchTodo from './containers/searchTodo'
 
 class App extends Component {
 
@@ -67,6 +68,7 @@ class App extends Component {
             <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo}/>} />
             <Route exact path='/new' render={(props) => <TodoNew {...props} createTodo={this.createTodo}/>}/>
             <Route exact path = '/todos/:id' render={(props) => <TodoShow {...props} todos = {this.state.todos}/>} />
+            <Route exact path = '/search' render={(props) => <SearchTodo {...props} todos = {this.state.todos}/>} />
 
 
           </Switch>

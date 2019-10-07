@@ -8,6 +8,7 @@ class Nav extends Component {
         <ul>
           <li><Link to='/'>ToDo List </Link></li>
           <li><Link to='/new'>Create ToDo </Link></li>
+          <li><Link to='/search'>Search Todo</Link></li>
 
         </ul>
 
