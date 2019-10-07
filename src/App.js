@@ -49,26 +49,17 @@ class App extends Component {
   }
 
   filterTodos = (arrayObj) => {
-    // debugger
     this.setState ({
       searchResults: arrayObj
     })
   }
 
-
   render () {
-
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
+          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer" >
             Learn React
           </a>
         </header>
@@ -82,15 +73,10 @@ class App extends Component {
 
             <Route exact path = '/search' render={(props) => <SearchTodo {...props} todos = {this.state.todos} filterTodos={this.filterTodos} searchResults={this.state.searchResults} deleteTodo={this.deleteTodo} editTodo={this.editTodo}/>} />
 
-
           </Switch>
         </Router>
-
-
       </div>
     );
-
-
   }
 }
 

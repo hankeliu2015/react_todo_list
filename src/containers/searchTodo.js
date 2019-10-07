@@ -15,12 +15,9 @@ class searchTodo extends Component {
     e.preventDefault();
     const lowChar = this.state.search.toLowerCase();
     const filteredTodos = this.props.todos.filter(todo => {
-      // debugger
       return todo.content.toLowerCase().includes(lowChar)
     })
     this.props.filterTodos(filteredTodos);
-    // this.props.createTodo(this.state);
-    // this.props.history.push('/');
   }
   render() {
 
@@ -29,24 +26,17 @@ class searchTodo extends Component {
     return (
       <div>
         <h3>Search a Task </h3>
-
         <form onSubmit={this.handleSubmit}>
-
           <label>Search Key Words :</label><input type = "text" name='search' value={this.state.search} onChange={this.handleChange}/><br/>
 
           <label>Completed?</label>
           <input type='checkbox' name='completed' value={this.state.completed} onChange={this.handleChange} /><br/>
 
           <input type='submit' value='Search' />
-
         </form>
 
         <h3>Search Results:</h3>
           {results}
-
-          {/*
-            <p>{this.props.filtered[0] ? this.props.filtered[0].content : "no results"}</p>
-            */}
       </div>
     )
   }
