@@ -26,10 +26,14 @@ class App extends Component {
 
   deleteTodo = (todoObj) => {
     let i = this.state.todos.indexOf(todoObj)
+    let j = this.state.searchResults.indexOf(todoObj)
     let stateTodos = this.state.todos
+    let stateSearchResults = this.state.searchResults
     stateTodos.splice(i,1);
+    stateSearchResults.splice(j,1);
     this.setState({
-      todos: stateTodos
+      todos: stateTodos,
+      searchResults: stateSearchResults
     })
   }
 
@@ -58,9 +62,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+
           <a
             className="App-link"
             href="https://reactjs.org"
