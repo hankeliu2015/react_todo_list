@@ -31,6 +31,17 @@ class App extends Component {
     })
   }
 
+  editTodo = (todoObj) => {
+    let i = this.state.todos.indexOf(todoObj)
+    // this.state.todos array, i element completed value set to true
+    let stateTodos = this.state.todos
+    stateTodos[i].completed = true
+
+    this.setState({
+      todos: stateTodos
+    })
+  }
+
   render () {
 
     return (
@@ -53,7 +64,7 @@ class App extends Component {
         <Router>
           <Nav />
           <Switch>
-            <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} deleteTodo={this.deleteTodo}/>} />
+            <Route exact path='/' render={(props) => <TodoList todos={this.state.todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo}/>} />
             <Route exact path='/new' render={(props) => <TodoNew {...props} createTodo={this.createTodo}/>}/>
             <Route exact path = '/todos/:id' render={(props) => <TodoShow {...props} todos = {this.state.todos}/>} />
 

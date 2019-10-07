@@ -7,13 +7,18 @@ class ToDo extends Component {
     this.props.deleteTodo(this.props.todoObj);
   }
 
+  handleEdit = (e) => {
+    e.preventDefault();
+    this.props.editTodo(this.props.todoObj);
+  }
+
 render() {
 
   return (
     <li>
       content: <Link to={`/todos/${this.props.index}`}>{this.props.content}</Link>; completed: {this.props.completed ? 'yes' : 'no'}
 
-      <button onClick={this.handleEdit}>edit</button>
+      <button onClick={this.handleEdit}>Complete Task</button>
       <button onClick={this.handleDelete}>Delete</button>
     </li>
     )
