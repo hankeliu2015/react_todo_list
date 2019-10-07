@@ -22,8 +22,8 @@ class App extends Component {
     this.setState({todos: [...this.state.todos, newTaskObj]})
   }
 
-  deleteTodo = (deleteObj) => {
-    let i = this.state.todos.indexOf(deleteObj)
+  deleteTodo = (todoObj) => {
+    let i = this.state.todos.indexOf(todoObj)
     let stateTodos = this.state.todos
     stateTodos.splice(i,1);
     this.setState({

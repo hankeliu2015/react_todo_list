@@ -20,8 +20,7 @@ class TodoNew extends Component {
   }
   render() {
     console.log(this.state)
-
-
+    
     return (
       <div>
         <h3>Add a new task </h3>
