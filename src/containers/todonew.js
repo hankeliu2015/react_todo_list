@@ -34,6 +34,9 @@ class TodoNew extends Component {
           <label>Content2:</label><input type = "text" name='content2' value={this.state.content2} onChange={this.handleChange}/><br/>
           */}
 
+          <label>Completed?</label>
+          <input type='checkbox' name='completed' value={this.state.completed} onChange={this.handleChange} /><br/>
+
           <input type='submit' value='Add Todo' />
 
         </form>
