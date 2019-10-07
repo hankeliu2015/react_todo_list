@@ -16,7 +16,8 @@ class App extends Component {
       {content: "Finish Building App", completed: true},
       {content: "Having Breakfast", completed: false},
       {content: "Do Laundry", completed: false}
-    ]
+    ],
+    filteredTodos: []
   }
 
   createTodo = (newTaskObj) => {

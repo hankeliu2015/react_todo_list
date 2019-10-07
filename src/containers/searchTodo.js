@@ -12,8 +12,13 @@ class searchTodo extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.createTodo(this.state);
-    this.props.history.push('/');
+    const lowChar = this.state.search.toLowerCase();
+    const filteredTodos = this.props.todos.filter(todo => {
+      return todo.content.toLowerCase().includes(lowChar)
+    })
+
+    // this.props.createTodo(this.state);
+    // this.props.history.push('/');
   }
   render() {
 
