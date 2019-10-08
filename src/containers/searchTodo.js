@@ -34,6 +34,11 @@ class searchTodo extends Component {
     }
   }
 
+  handleResetSearch = (e) => {
+    e.preventDefault();
+    window.location.reload();
+    // this.props.history.push('/search');
+  }
 
   render() {
 
@@ -50,6 +55,8 @@ class searchTodo extends Component {
 
           <input type='submit' value='Search' />
         </form>
+
+        <form onSubmit={this.handleResetSearch}><input type='submit' value='Reset Search'/></form>
 
         <h3>Search Results:</h3>
           {results}
